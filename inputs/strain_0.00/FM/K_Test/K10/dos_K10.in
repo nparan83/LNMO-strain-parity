@@ -1,0 +1,9 @@
+&DOS
+    prefix = 'lnmo_K10',
+    outdir = './tmp',
+    fildos = 'lnmo_K10.dos',
+    Emin = -10.0,
+    Emax = 10.0,
+    DeltaE = 0.01,
+    bz_sum = 'tetrahedra'
+/

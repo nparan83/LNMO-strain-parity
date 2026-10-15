@@ -1,0 +1,8 @@
+&PROJWFC
+    prefix = 'lnmo_FM_-0.05',
+    outdir = './tmp',
+    filpdos= 'lnmo_FM_-0.05',
+    Emin = 2.0,
+    Emax = 20.0,
+    DeltaE = 0.01
+/

@@ -1,0 +1,9 @@
+Gamma-point phonon stability check
+&inputph
+  prefix   = 'lnmo_FM_0.00',
+  outdir   = './tmp',
+  fildyn   = 'lnmo_FM_0.00.dyn',
+  tr2_ph   = 1.0d-14,
+  epsil    = .false.,
+/
+0.0 0.0 0.0

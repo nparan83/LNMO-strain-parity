@@ -1,0 +1,72 @@
+&CONTROL
+    calculation   = 'scf'
+    restart_mode  = 'from_scratch'
+    prefix        = 'lnmo_AFM_-0.01'
+    outdir        = './tmp'
+    pseudo_dir    = '/arf/scratch/nparan/lnmo/pseudo'
+    verbosity     = 'high'
+    etot_conv_thr = 1.0d-6
+    forc_conv_thr = 1.0d-4
+/
+&SYSTEM
+    ibrav         = 0
+    nat           = 20
+    ntyp          = 6
+    ecutwfc       = 90.0
+    ecutrho       = 900.0
+    nspin         = 2
+    starting_magnetization(1) = 0.0
+    starting_magnetization(2) = 0.5
+    starting_magnetization(3) = -0.5
+    starting_magnetization(4) = 0.5
+    starting_magnetization(5) = -0.5
+    starting_magnetization(6) = 0.0
+    occupations   = 'smearing'
+    smearing      = 'mv'
+    degauss       = 0.01
+/
+&ELECTRONS
+    diagonalization = 'david'
+    mixing_mode     = 'plain'
+    mixing_beta     = 0.7
+    conv_thr        = 1.0d-10
+/
+ATOMIC_SPECIES
+ La    138.905  La.pbe-spfn-kjpaw_psl.1.0.0.UPF
+ Mn1    54.938  Mn.pbe-spn-kjpaw_psl.0.3.1.UPF
+ Mn2    54.938  Mn.pbe-spn-kjpaw_psl.0.3.1.UPF
+ Ni1    58.693  Ni.pbe-n-kjpaw_psl.0.1.UPF
+ Ni2    58.693  Ni.pbe-n-kjpaw_psl.0.1.UPF
+ O      15.999  O.pbe-n-kjpaw_psl.1.0.0.UPF
+CELL_PARAMETERS (angstrom)
+   5.495282387   0.000000000  -0.000400664
+   0.000000000   5.522600278   0.000000000
+  -5.454247631   0.000002138   7.922352095
+ATOMIC_POSITIONS (crystal)
+La            0.2579959019        0.5363083241        0.7498969146
+La            0.7420040981        0.4636916759        0.2501030854
+La            0.7420039735        0.0363082559        0.7501030227
+La            0.2579960265        0.9636917441        0.2498969773
+Mn1           0.5000000000        0.0000000000       -0.0000000000
+Mn2           0.5000000000        0.5000000000        0.5000000000
+Ni1          -0.0000000000        0.0000000000        0.5000000000
+Ni2           0.0000000000        0.5000000000        0.0000000000
+O             0.1871477503        0.5134470998        0.2598361626
+O             0.8128522497        0.4865529002        0.7401638374
+O             0.8128523340        0.0134472315        0.2401637171
+O             0.1871476660        0.9865527685        0.7598362829
+O             0.2613163919        0.2021374581        0.0401169409
+O             0.7386836081        0.7978625419        0.9598830591
+O             0.7386836469        0.7021375437        0.4598831664
+O             0.2613163531        0.2978624563        0.5401168336
+O             0.3405399368        0.7195512599        0.0407677840
+O             0.6594600632        0.2804487401        0.9592322160
+O             0.6594602513        0.2195514878        0.4592323130
+O             0.3405397487        0.7804485122        0.5407676870
+K_POINTS automatic
+ 6 6 4   0 0 0
+HUBBARD ortho-atomic
+ U Mn1-3d 4.0
+ U Mn2-3d 4.0
+ U Ni1-3d 5.1
+ U Ni2-3d 5.1

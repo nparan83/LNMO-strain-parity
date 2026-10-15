@@ -1,0 +1,12 @@
+# eps Q3_Ni |Q3| Eg_up Eg_dn n_up n_dn E_F dosya
+ -5.00    0.16991    0.16991     1.0763     3.1580    88    78    13.1687 LNMO_Strain_Production/strain_-0.05/FM/nscf_FM.out
+ -4.00    0.13428    0.13428     1.1430     3.2022    88    78    12.9390 LNMO_Strain_Production/strain_-0.04/FM/nscf_FM.out
+ -3.00    0.09943    0.09943     1.1942     3.2304    88    78    12.7053 LNMO_Strain_Production/strain_-0.03/FM/nscf_FM.out
+ -2.00    0.06500    0.06500     1.2406     3.2437    88    78    12.4861 LNMO_Strain_Production/strain_-0.02/FM/nscf_FM.out
+ -1.00        nan        nan     1.2764     3.2439    88    78    12.2645 LNMO_Strain_Production/strain_-0.01/FM/nscf_FM.out
+  0.00   -0.00338    0.00338     1.2950     3.2321    88    78    12.0446 LNMO_Strain_Production/strain_0.00/FM/nscf_FM.out
+  1.00        nan        nan     1.2953     3.1812    88    78    11.8241 LNMO_Strain_Production/strain_0.01/FM/nscf_FM.out
+  2.00   -0.07163    0.07163     1.2526     3.1164    88    78    11.6016 LNMO_Strain_Production/strain_0.02/FM/nscf_FM.out
+  3.00   -0.10625    0.10625     1.1912     3.0474    88    78    11.3699 LNMO_Strain_Production/strain_0.03/FM/nscf_FM.out
+  4.00   -0.14137    0.14137     1.1325     2.9753    88    78    11.1428 LNMO_Strain_Production/strain_0.04/FM/nscf_FM.out
+  5.00   -0.17724    0.17724     1.0836     2.8969    88    78    10.9150 LNMO_Strain_Production/strain_0.05/FM/nscf_FM.out

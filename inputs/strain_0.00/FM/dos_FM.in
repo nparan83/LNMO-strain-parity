@@ -1,0 +1,8 @@
+&DOS
+    prefix = 'lnmo_FM_0.00',
+    outdir = './tmp',
+    fildos = 'lnmo_FM_0.00.dos',
+    Emin = 2.0,
+    Emax = 20.0,
+    DeltaE = 0.01
+/
