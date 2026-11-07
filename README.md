@@ -1,51 +1,30 @@
-# LNMO-strain-parity
+# revision1 — calculations added in the revision (R2)
 
-Data and code for
+Inputs, summary outputs and scripts of the calculations requested by Reviewer #3. All calculations use the production settings of the main data set (Quantum ESPRESSO 7.2, PBE+U, ortho-atomic projectors, U(Mn) = 4.0 eV, U(Ni) = 5.1 eV, 90/900 Ry, 6×6×4 mesh) and the relaxed structures in `../inputs/strain_*/FM/`. The shell scripts were run on the TRUBA cluster (SLURM); paths inside them refer to that file system. Some comments and summary labels are in Turkish (yol = path, ızgara = mesh, bitmemiş = unfinished, kararlı = stable).
 
-> N. Paran, *Channel-selective parity of the strain response in La₂NiMnO₆: a sign-blind majority gap and a displaced minority gap*, submitted to Computational Materials Science (manuscript COMMAT-D-26-04486).
+## Files
 
-All first-principles calculations were performed with Quantum ESPRESSO 7.2 (PBE+U, Dudarev, ortho-atomic projectors, U(Mn) = 4.0 eV, U(Ni) = 5.1 eV; PSlibrary PAW datasets La.pbe-spfn-kjpaw_psl.1.0.0, Mn.pbe-spn-kjpaw_psl.0.3.1, Ni.pbe-n-kjpaw_psl.0.1, O.pbe-n-kjpaw_psl.1.0.0; 90/900 Ry). The pseudopotential files themselves are not redistributed; they are available from PSlibrary.
-
-## Layout
-
-| Folder | Content |
+| File | Content |
 |---|---|
-| `inputs/strain_<eps>/{FM,AFM,FiM}/` | pw.x, dos.x and projwfc.x input files for all eleven strain states (ε = −0.05 … +0.05) and the FM, C-type AFM and FiM configurations (FiM at −0.05, 0.00, +0.05 only); `strain_0.00/FM/K_Test/` contains the k-point convergence tests |
-| `outputs/strain_<eps>/...` | the corresponding output files (gzip-compressed) |
-| `dos/` | density-of-states and projected-DOS files used for Fig. 5 |
-| `data/` | derived data files from which the tables and figures are generated |
-| `scripts/` | extraction and analysis scripts (Python) |
-| `scripts/figures/` | plotting scripts |
-| `MANIFEST.txt` | list of all files |
+| `R1_ozet.txt` | one-page summary printed on TRUBA after all runs: elastic runs, C_ij, tilt comparison, Γ-point frequencies, a⁻a⁻a⁻ gaps |
+| `R1_final.tar.gz` | `el/Cij.dat`; `ph/eps_{-0.05,0.00,0.05}/gamma_freq.dat`, `gamma_irreps.txt`; `tilt/eps_*/scf.in` (relaxed a⁻a⁻a⁻ structures); `tilt/eps_{-0.03,-0.04,-0.05}/gap/` (bands.in, bands.x outputs, band files) |
+| `inputs.tar.gz` | input templates of the added calculations |
+| `bands/bands_inputs.tar.gz` | bands.x / pw.x inputs of the high-symmetry paths of the a⁻a⁻c⁺ structure |
+| `data/gap_R2.dat` | **Table 3**: spin-resolved gaps; smaller of the mesh and path values where the path was computed (ε = −5, 0, +1 … +5 %), mesh values otherwise |
+| `data/band_edges_R1.dat` | path, mesh and minimum gaps and the band-edge locations (Sec. 2.3, Sec. 3.5, Fig. 6) |
+| `data/eg_t2g_occ.dat` | e_g/t_2g occupations of Ni1 and Mn1 integrated to mid-gap, and the e_g–t_2g mixing ("leak") caused by the octahedral tilts (Sec. 2.3, Sec. 3.5, Fig. 5) |
+| `data/tilt_gap_data.dat` | ΔE(a⁻a⁻a⁻ − a⁻a⁻c⁺) and the gaps of both tilt patterns (Sec. 3.7, Fig. 9, Table A3) |
 
-## From files to results
+## Scripts
 
-| Manuscript item | Data file | Produced by |
-|---|---|---|
-| Sec. 3.1–3.2, Figs. 2–3: total energies, ΔE(AFM−FM), ΔE(FiM−FM), M_tot | `data/energies.dat` | `scripts/extract_p1.py` (from `outputs/strain_*/{FM,AFM,FiM}/scf*.out.gz`) |
-| Sec. 3.3, Fig. 4: c⊥ = V/\|a×b\| | `data/cperp.dat` | `scripts/extract_p1.py` (from `inputs/strain_*/FM/scf_FM.in`) |
-| Table 1: Löwdin moments and populations | `data/lowdin.dat` | `scripts/extract_p1.py` (from the projwfc.x outputs) |
-| Table 2, Q₃ amplitudes of NiO₆ and MnO₆ | `data/q3_geo.dat` | `scripts/q3_geo.py` (uses `scripts/q3lib.py`) |
-| Table 3: spin-resolved gaps | `data/gap.dat` | `scripts/gap3.py`; independent re-extraction with fixed band indices (n↑ = 88, n↓ = 78): `data/gap_check.dat` from `scripts/extract_p1.py` |
-| Sec. 3.4: band-edge k-points; Sec. 2: k-mesh test | outputs in `outputs/strain_*/FM/` and `outputs/strain_0.00/FM/K_Test/` | `scripts/gk.py`, `scripts/gk2.py`, `scripts/edges.py`, `scripts/kedge.py` |
-| Fig. 5: DOS and projected DOS | `dos/` | `scripts/dos_cizim.py` |
-| Fig. 6: E_g against \|Q₃\| and the linear fit | `data/gap.dat`, `data/q3_geo.dat` | `scripts/gap.py` |
-| Table 4, Fig. 7, peak positions of Sec. 3.5 | `data/gap.dat` | `scripts/figures/fig7_gap_parity.py` |
-| Sec. 2: C-type spin pattern of the AFM configuration | `inputs/strain_*/AFM/` | `scripts/afm_id.py` |
-| Table 5: substrate mismatch | a_pc = 3.935 Å and literature substrate parameters (manuscript Sec. 3.6) | — |
+| Calculation | Manuscript item | Generation / submission | Post-processing |
+|---|---|---|---|
+| Γ-point phonons, finite displacements (Phonopy 2.26.2, 0.01 Å, 30 displacements per strain) | Sec. 2.4, Sec. 3.4, Table A1 | `ph_gen.py`, `r1_ph.sh` | `ph_post.py`, `ph_irr.py` |
+| Elastic constants, ±0.5 % Voigt deformations with relaxed ions | Sec. 2.4, Sec. 3.3, Table A2 | `el_gen.py`, `r1_el.sh` | `el_post.py` |
+| a⁻a⁻a⁻ tilt pattern under the epitaxial constraint | Sec. 2.5, Sec. 3.7, Fig. 9, Table A3 | `tilt_gen.py`, `mkin.py`, `r1_tilt.sh`, `r1_tilt_rs.sh`; gaps `r1_aaa_gap.sh` | `tilt_post.py`, `gap_aaa.py` |
+| High-symmetry band paths of the a⁻a⁻c⁺ structure | Sec. 2.3, Sec. 3.5, Fig. 6 | `r1_bands2.sh`, `r1_bands3.sh` | `scripts/cell_bands2.py` |
+| e_g/t_2g projections in the pseudocubic frame | Sec. 2.3, Sec. 3.5, Fig. 5 | projwfc.x outputs of the main data set (`r1_pack2.sh`) | `scripts/cell_egt2g.py` |
+| Figures 2, 7, 8 and the graphical abstract | Fig. 2, Fig. 7, Fig. 8, Table 4 | — | `scripts/make_figs.py` (reads `../data/` and `data/gap_R2.dat`) |
+| Figures 2, 3, 7, 8 (Google Colab version) | Fig. 2, Fig. 3, Fig. 7, Fig. 8 | — | `scripts/colab_R2_figs.py` (reads the data files from this repository) |
 
-`scripts/extract_p1.py` and `scripts/figures/fig7_gap_parity.py` run directly on this repository (from its root) and print a comparison with the values quoted in the manuscript; at the time of submission all 17 checks of `extract_p1.py` and all 9 checks of `fig7_gap_parity.py` pass. The remaining scripts were run in the original working layout (`LNMO_Strain_Production/strain_*/{FM,AFM,FiM}/`, uncompressed outputs), which corresponds one-to-one to `inputs/` and `outputs/` here; some of their comments are in Turkish.
-
-Rounding note: the band gaps are given to 0.1 meV, so several even/odd components of Table 4 fall exactly on a half-way value (e.g. T↑ at |ε| = 1 %: (1.2953 − 1.2764)/2 = 9.45 meV). The manuscript rounds these half-up (9.5 meV); Python's binary floating-point formatting may print the value 0.1 meV lower (9.4 meV). The same applies to the majority-gap maximum, +0.035 % on the 0.005 % grid of the script, quoted as +0.04 % in the manuscript.
-
-## Requirements
-
-Python ≥ 3.8 with NumPy and Matplotlib.
-
-## Licence
-
-Code: MIT (see `LICENSE`). Data: CC BY 4.0.
-
-## Contact
-
-Nejdet Paran, Department of Physics, Faculty of Science, Erciyes University, Kayseri, Türkiye — nejdetparan@erciyes.edu.tr — ORCID 0000-0003-0317-0438
+`python3 revision1/scripts/make_figs.py`, run from any folder, writes the figures to `./figs/` and prints the fit E_g = 1.327 − 1.370|Q₃| (r = −0.983, RMSE = 14 meV), the gap maxima (+0.03 % and −1.60 %) and the odd parts of Table 4.

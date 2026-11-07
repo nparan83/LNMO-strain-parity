@@ -1,0 +1,13 @@
+# Table 3 (R2): spin-resolved band gaps (eV) of the a-a-c+ structure
+# eps(%)  Eg_up  Eg_dn   source: min(6x6x4 mesh, high-symmetry path) where the path was computed (eps = -5, 0, +1..+5), mesh otherwise
+ -5  1.0755  3.1580
+ -4  1.1430  3.2022
+ -3  1.1942  3.2304
+ -2  1.2406  3.2437
+ -1  1.2764  3.2439
+ +0  1.2947  3.2321
+ +1  1.2930  3.1755
+ +2  1.2526  3.1121
+ +3  1.1911  3.0398
+ +4  1.1325  2.9656
+ +5  1.0828  2.8861

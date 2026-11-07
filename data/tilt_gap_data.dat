@@ -1,0 +1,12 @@
+# eps(%) dE_aaa-aac(meV/fu) Eg_up_aac Eg_dw_aac Eg_up_aaa Eg_dw_aaa ; eps*=-3.445 ; dw aaa -4,-5 ust sinir
+-5 -27.1 1.0755 3.1580 1.2894 3.0486
+-4 -7.1 1.1430 3.2022 1.3261 3.2114
+-3 6.0 1.1942 3.2304 1.3479 3.2683
+-2 23.0 1.2406 3.2437 nan nan
+-1 39.1 1.2764 3.2439 nan nan
++0 53.7 1.2947 3.2321 nan nan
++1 nan 1.2930 3.1755 nan nan
++2 nan 1.2526 3.1121 nan nan
++3 nan 1.1911 3.0398 nan nan
++4 nan 1.1325 2.9656 nan nan
++5 nan 1.0828 2.8861 nan nan
