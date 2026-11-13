@@ -7,12 +7,12 @@ mpl.rcParams.update({"pdf.fonttype":42,"svg.fonttype":"path","font.family":"sans
   "xtick.direction":"in","ytick.direction":"in","xtick.top":True,"ytick.right":True,"legend.frameon":False,"figure.dpi":200})
 import os
 D = os.path.dirname(os.path.abspath(__file__))
-R = os.path.join(D, '..', '..', 'data') + '/'          # repository data/ folder
+R = os.path.join(D, '..', 'data') + '/'          # repository data/ folder
 os.makedirs('figs', exist_ok=True)
 E = np.loadtxt(R+'energies.dat'); e = E[:,0]*100
 q = np.loadtxt(R+'q3_geo.dat', usecols=(0,3,7)); Q = np.abs(q[:,1])
 # R1 band gaps: min(6x6x4 mesh, high-symmetry path); -1..-4 mesh only (band_edges_R1.dat, gap.dat)
-UP, DN = np.loadtxt(os.path.join(D, '..', 'data', 'gap_R2.dat'), usecols=(1, 2), unpack=True)   # Table 3
+UP, DN = np.loadtxt(R + 'gap_R2.dat', usecols=(1, 2), unpack=True)   # Table 3
 def save(fig, n):
     for ext, kw in (("pdf",{}),("png",{"dpi":600})): fig.savefig(f"figs/{n}.{ext}", **kw)
 # ---- Fig. 2 ----
