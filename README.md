@@ -1,5 +1,7 @@
 # LNMO-strain-parity
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24353930.svg)](https://doi.org/10.5281/zenodo.24353930)
+
 Data and code for
 
 > N. Paran, *Channel-selective parity of the strain response in La₂NiMnO₆: a sign-blind majority gap and a displaced minority gap*, Computational Materials Science, manuscript COMMAT-D-26-04486 (revised version R2, November 2026).
