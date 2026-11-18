@@ -1,0 +1,14 @@
+{
+  "title": "Data and code for: Channel-selective parity of the strain response in La2NiMnO6: a sign-blind majority gap and a displaced minority gap",
+  "upload_type": "dataset",
+  "description": "Quantum ESPRESSO inputs and outputs, derived data files and analysis/plotting scripts for N. Paran, Computational Materials Science (accepted, 2026). The folder revision1/ contains the calculations added in the revision (Gamma-point phonons, elastic constants, band paths, a-a-a- tilt pattern). README.md maps every table and figure to its data file and script.",
+  "creators": [
+    {
+      "name": "Paran, Nejdet",
+      "affiliation": "Erciyes University, Faculty of Science, Department of Physics, Kayseri, Türkiye",
+      "orcid": "0000-0003-0317-0438"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": ["La2NiMnO6", "double perovskite", "epitaxial strain", "DFT+U", "band gap", "Quantum ESPRESSO"]
+}
