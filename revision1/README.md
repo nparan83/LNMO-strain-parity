@@ -8,8 +8,8 @@ Inputs, summary outputs and scripts of the calculations requested by Reviewer #3
 |---|---|
 | `R1_ozet.txt` | one-page summary printed on TRUBA after all runs: elastic runs, C_ij, tilt comparison, Γ-point frequencies, a⁻a⁻a⁻ gaps |
 | `R1_final.tar.gz` | `el/Cij.dat`; `ph/eps_{-0.05,0.00,0.05}/gamma_freq.dat`, `gamma_irreps.txt`; `tilt/eps_*/scf.in` (relaxed a⁻a⁻a⁻ structures); `tilt/eps_{-0.03,-0.04,-0.05}/gap/` (bands.in, bands.x outputs, band files) |
-| `inputs.tar.gz` | input templates of the added calculations |
-| `bands/bands_inputs.tar.gz` | bands.x / pw.x inputs of the high-symmetry paths of the a⁻a⁻c⁺ structure |
+| `inputs.tar.gz` | inputs of the added calculations: `el/` (twelve strained-cell pw.x inputs and `Cij.dat`), `ph/eps_{-0.05,0.00,0.05}/` (phonopy displacement file, pw.x input, `gamma_freq.dat`, `gamma_irreps.txt`), `tilt/eps_*/` (vc-relax and scf inputs of the a⁻a⁻a⁻ tilt calculations; `gap/` inputs at ε = −3, −4, −5 %) |
+| `bands/bands_inputs.tar.gz` | pw.x band-structure inputs (`calculation = 'bands'`) along the high-symmetry path of the a⁻a⁻c⁺ structure, one per strain state (eleven files) |
 | `../data/gap_R2.dat` | **Table 3**: spin-resolved gaps; smaller of the mesh and path values where the path was computed (ε = −5, 0, +1 … +5 %), mesh values otherwise |
 | `../data/band_edges_R1.dat` | path, mesh and minimum gaps and the band-edge locations (Sec. 2.3, Sec. 3.5, Fig. 6) |
 | `../data/eg_t2g_occ.dat` | e_g/t_2g occupations of Ni1 and Mn1 integrated to mid-gap, and the e_g–t_2g mixing ("leak") caused by the octahedral tilts (Sec. 2.3, Sec. 3.5, Fig. 5) |
