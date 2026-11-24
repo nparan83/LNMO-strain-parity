@@ -1,7 +1,7 @@
 {
   "title": "Data and code for: Channel-selective parity of the strain response in La2NiMnO6: a sign-blind majority gap and a displaced minority gap",
   "upload_type": "dataset",
-  "description": "Quantum ESPRESSO inputs and outputs, derived data files and analysis/plotting scripts for N. Paran, Computational Materials Science (2026) 115286, https://doi.org/10.1016/j.commatsci.2026.115286. The folder revision1/ contains the calculations added in the revision (Gamma-point phonons, elastic constants, band paths, a-a-a- tilt pattern). README.md maps every table and figure to its data file and script.",
+  "description": "Quantum ESPRESSO inputs and outputs, derived data files and analysis/plotting scripts for N. Paran, Computational Materials Science 277 (2027) 115286, https://doi.org/10.1016/j.commatsci.2026.115286. The folder revision1/ contains the calculations added in the revision (Gamma-point phonons, elastic constants, band paths, a-a-a- tilt pattern). README.md maps every table and figure to its data file and script.",
   "creators": [
     {
       "name": "Paran, Nejdet",

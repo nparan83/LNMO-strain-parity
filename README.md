@@ -4,7 +4,7 @@
 
 Data and code for
 
-> N. Paran, *Channel-selective parity of the strain response in La₂NiMnO₆: a sign-blind majority gap and a displaced minority gap*, Computational Materials Science (2026) 115286, [https://doi.org/10.1016/j.commatsci.2026.115286](https://doi.org/10.1016/j.commatsci.2026.115286).
+> N. Paran, *Channel-selective parity of the strain response in La₂NiMnO₆: a sign-blind majority gap and a displaced minority gap*, Computational Materials Science 277 (2027) 115286, [https://doi.org/10.1016/j.commatsci.2026.115286](https://doi.org/10.1016/j.commatsci.2026.115286).
 
 All first-principles calculations were performed with Quantum ESPRESSO 7.2 (PBE+U, Dudarev, ortho-atomic projectors, U(Mn) = 4.0 eV, U(Ni) = 5.1 eV; PSlibrary PAW datasets La.pbe-spfn-kjpaw_psl.1.0.0, Mn.pbe-spn-kjpaw_psl.0.3.1, Ni.pbe-n-kjpaw_psl.0.1, O.pbe-n-kjpaw_psl.1.0.0; 90/900 Ry). The pseudopotential files themselves are not redistributed; they are available from PSlibrary.
 
